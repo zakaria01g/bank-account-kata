@@ -12,4 +12,8 @@ public class AccountService {
     public void deposit(double amount) {
         account.deposit(amount);
     }
+
+    public void withdraw(double amount) {
+        account.withdraw(amount);
+    }
 }
