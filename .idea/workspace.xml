@@ -7,7 +7,6 @@
     <list default="true" id="8e827d9a-20ec-4dc2-9d2f-0b3255ce8ab2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/interview/bankaccount/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/interview/bankaccount/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/interview/bankaccount/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/interview/bankaccount/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AccountServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -71,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702495639396</updated>
-      <workItem from="1702495640502" duration="4235000" />
+      <workItem from="1702495640502" duration="6756000" />
     </task>
     <servers />
   </component>

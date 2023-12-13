@@ -1,8 +1,12 @@
 import com.interview.bankaccount.exception.InsufficientFundsException;
 import com.interview.bankaccount.model.Account;
+import com.interview.bankaccount.model.Transaction;
+import com.interview.bankaccount.model.TransactionType;
 import com.interview.bankaccount.service.AccountService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -47,5 +51,17 @@ public class AccountServiceTest {
 
         assertThrows(InsufficientFundsException.class, () -> accountService.withdraw(withdrawalAmount),
                 "Should throw InsufficientFundsException when withdrawal amount exceeds balance");
+    }
+
+    @Test
+    void shouldRecordTransactionsOnDepositAndWithdrawal() {
+        accountService.deposit(100.0);
+        accountService.withdraw(50.0);
+
+        List<Transaction> transactions = account.getTransactions();
+
+        assertEquals(2, transactions.size(), "There should be two transactions recorded");
+        assertEquals(TransactionType.DEPOSIT, transactions.get(0).getType());
+        assertEquals(TransactionType.WITHDRAWAL, transactions.get(1).getType());
     }
 }
