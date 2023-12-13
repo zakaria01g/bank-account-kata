@@ -16,8 +16,9 @@ public class Account {
         if (amount <= 0) {
             throw new IllegalArgumentException("Deposit amount must be positive");
         }
-        this.balance += amount;
-        transactions.add(new Transaction(amount, TransactionType.DEPOSIT));
+        double newBalance = this.balance + amount;
+        transactions.add(new Transaction(amount, TransactionType.DEPOSIT, newBalance));
+        this.balance = newBalance;
     }
 
     public void withdraw(double amount) {
@@ -27,8 +28,9 @@ public class Account {
         if (this.balance < amount) {
             throw new InsufficientFundsException("Insufficient funds for withdrawal");
         }
-        this.balance -= amount;
-        transactions.add(new Transaction(amount, TransactionType.WITHDRAWAL));
+        double newBalance = this.balance - amount;
+        transactions.add(new Transaction(amount, TransactionType.WITHDRAWAL, newBalance));
+        this.balance = newBalance;
     }
 
     public double getBalance() {

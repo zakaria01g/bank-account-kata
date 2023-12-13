@@ -61,7 +61,15 @@ public class AccountServiceTest {
         List<Transaction> transactions = account.getTransactions();
 
         assertEquals(2, transactions.size(), "There should be two transactions recorded");
-        assertEquals(TransactionType.DEPOSIT, transactions.get(0).getType());
-        assertEquals(TransactionType.WITHDRAWAL, transactions.get(1).getType());
+
+        Transaction firstTransaction = transactions.get(0);
+        assertEquals(TransactionType.DEPOSIT, firstTransaction.getType());
+        assertEquals(100.0, firstTransaction.getAmount());
+        assertEquals(100.0, firstTransaction.getBalanceAfterTransaction());
+
+        Transaction secondTransaction = transactions.get(1);
+        assertEquals(TransactionType.WITHDRAWAL, secondTransaction.getType());
+        assertEquals(50.0, secondTransaction.getAmount());
+        assertEquals(50.0, secondTransaction.getBalanceAfterTransaction());
     }
 }

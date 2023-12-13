@@ -4,14 +4,15 @@ import java.util.Date;
 
 public class Transaction {
     private final Date date;
-    private final  double amount;
-
+    private final double amount;
     private final TransactionType type;
+    private final double balanceAfterTransaction;
 
-    public Transaction(double amount, TransactionType type) {
+    public Transaction(double amount, TransactionType type, double balanceAfterTransaction) {
         this.date = new Date();
         this.amount = amount;
         this.type = type;
+        this.balanceAfterTransaction = balanceAfterTransaction;
     }
 
     public Date getDate() {
@@ -24,5 +25,9 @@ public class Transaction {
 
     public TransactionType getType() {
         return type;
+    }
+
+    public double getBalanceAfterTransaction() {
+        return balanceAfterTransaction;
     }
 }
