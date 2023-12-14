@@ -56,8 +56,8 @@ public class AccountServiceTest {
     @Test
     void shouldRecordTransactionsOnDepositAndWithdrawal() {
         accountService.deposit(100.0);
-        accountService.withdraw(50.0);
-
+        accountService.withdraw(30.0);
+        accountService.printStatement();
         List<Transaction> transactions = account.getTransactions();
 
         assertEquals(2, transactions.size(), "There should be two transactions recorded");
@@ -69,7 +69,7 @@ public class AccountServiceTest {
 
         Transaction secondTransaction = transactions.get(1);
         assertEquals(TransactionType.WITHDRAWAL, secondTransaction.getType());
-        assertEquals(50.0, secondTransaction.getAmount());
-        assertEquals(50.0, secondTransaction.getBalanceAfterTransaction());
+        assertEquals(30.0, secondTransaction.getAmount());
+        assertEquals(70.0, secondTransaction.getBalanceAfterTransaction());
     }
 }
